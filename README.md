@@ -1,5 +1,5 @@
-http://www.inanzzz.com/index.php/post/qdil/creating-a-ssh-server-with-openssh-by-using-docker-compose-and-connecting-to-it-with-php
-https://docs.docker.com/engine/examples/running_ssh_service/
+[Creating a SSH server with OpenSSH](http://www.inanzzz.com/index.php/post/qdil/creating-a-ssh-server-with-openssh-by-using-docker-compose-and-connecting-to-it-with-php
+https://docs.docker.com/engine/examples/running_ssh_service/)
 
 ```
 dos2unix *.sh
