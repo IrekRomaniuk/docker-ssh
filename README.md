@@ -2,17 +2,20 @@ http://www.inanzzz.com/index.php/post/qdil/creating-a-ssh-server-with-openssh-by
 https://docs.docker.com/engine/examples/running_ssh_service/
 
 ```
-docker build --no-cache -t debian-ssh .
-docker run --rm -p 2222:22 debian-ssh
-docker tag debian-ssh irom77/debian-ssh:latest
-docker push irom77/debian-ssh
+dos2unix *.sh
+export SSH_MASTER_USER=azureuser
+export SSH_MASTER_PASS=azurepass
+docker build --no-cache -t docker-ssh . --build-arg SSH_MASTER_USER=azureuser --build-arg SSH_MASTER_PASS=azurepass
+docker run --rm -p 2222:22 docker-ssh
+docker tag docker-ssh irom77/docker-ssh:latest
+docker push irom77/docker-ssh
 ```
 
 Test
 
 Connection
 ```
-$ ssh master@172.18.0.2 -p 22
+$ ssh master@localhost -p 22 -o StrictHostKeyChecking=no
 master@server:~$
 ```
 Create a new user

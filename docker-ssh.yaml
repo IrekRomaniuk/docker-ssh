@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: debian-ssh
+  name: docker-ssh
   labels:
     environment: production
-    app: debian-ssh
+    app: docker-ssh
 spec:
   containers:
-  - name: debian-ssh
-    image: irom77/debian-ssh:latest
+  - name: docker-ssh
+    image: irom77/docker-ssh:latest
     ports:
         - containerPort: 2222    
     env: 
@@ -33,7 +33,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: debian-ssh
+  name: docker-ssh
   annotations:
     service.beta.kubernetes.io/azure-load-balancer-internal: "true"
 spec:
@@ -41,4 +41,4 @@ spec:
   ports:
   - port: 22
   selector:
-    app: debian-ssh         
+    app: docker-ssh         
